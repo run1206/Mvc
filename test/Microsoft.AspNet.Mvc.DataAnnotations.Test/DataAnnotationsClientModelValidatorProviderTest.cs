@@ -19,9 +19,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
         {
             // Arrange
             var provider = new DataAnnotationsClientModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
 
             var metadata = _metadataProvider.GetMetadataForProperty(
                 typeof(DummyRequiredAttributeHelperClass),
@@ -42,9 +42,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
         {
             // Arrange
             var provider = new DataAnnotationsClientModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
 
             var metadata = _metadataProvider.GetMetadataForProperty(
                 typeof(DummyRequiredAttributeHelperClass),
@@ -64,9 +64,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
         {
             // Arrange
             var provider = new DataAnnotationsClientModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
 
             var metadata = _metadataProvider.GetMetadataForProperty(
                 typeof(DummyRequiredAttributeHelperClass),
@@ -88,9 +88,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
         {
             // Arrange
             var provider = new DataAnnotationsClientModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
             var metadata = _metadataProvider.GetMetadataForType(typeof(DummyClassWithDummyValidationAttribute));
 
             var providerContext = new ClientValidatorProviderContext(metadata);

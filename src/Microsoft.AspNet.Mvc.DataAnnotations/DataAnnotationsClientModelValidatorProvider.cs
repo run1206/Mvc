@@ -29,13 +29,22 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
         /// <param name="options">The <see cref="IOptions{MvcDataAnnotationsLocalizationOptions}"/>.</param>
         /// <param name="stringLocalizerFactory">The <see cref="IStringLocalizerFactory"/>.</param>
         public DataAnnotationsClientModelValidatorProvider(
+            IValidationAttributeAdapterProvider validationAttributeAdapterProvider,
             IOptions<MvcDataAnnotationsLocalizationOptions> options,
-            IStringLocalizerFactory stringLocalizerFactory,
-            IValidationAttributeAdapterProvider validationAttributeAdapterProvider)
+            IStringLocalizerFactory stringLocalizerFactory)
         {
+            if (validationAttributeAdapterProvider == null)
+            {
+                throw new ArgumentNullException(nameof(validationAttributeAdapterProvider));
+            }
+            if (options == null)
+            {
+                throw new ArgumentNullException(nameof(options));
+            }
+
+            _validationAttributeAdapterProvider = validationAttributeAdapterProvider;
             _options = options;
             _stringLocalizerFactory = stringLocalizerFactory;
-            _validationAttributeAdapterProvider = validationAttributeAdapterProvider;
         }
 
         /// <inheritdoc />

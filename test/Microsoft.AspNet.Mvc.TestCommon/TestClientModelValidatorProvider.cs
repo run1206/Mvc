@@ -15,9 +15,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
             {
                 new DefaultClientModelValidatorProvider(),
                 new DataAnnotationsClientModelValidatorProvider(
+                    new ValidationAttributeAdapterProvider(),
                     new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                    stringLocalizerFactory: null,
-                    validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider()),
+                    stringLocalizerFactory: null),
             };
 
             return new TestClientModelValidatorProvider(providers);

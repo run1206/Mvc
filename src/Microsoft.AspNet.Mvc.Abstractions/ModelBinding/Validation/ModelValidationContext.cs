@@ -29,12 +29,12 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
         }
 
         /// <summary>
-        /// Gets or sets the model object.
+        /// Gets the model object.
         /// </summary>
         public object Model { get; }
 
         /// <summary>
-        /// Gets or sets the model container object.
+        /// Gets the model container object.
         /// </summary>
         public object Container { get; }
     }

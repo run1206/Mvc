@@ -35,9 +35,9 @@ namespace Microsoft.AspNet.Mvc.ViewFeatures.Internal
             // Set up client validators
             options.ClientModelValidatorProviders.Add(new DefaultClientModelValidatorProvider());
             options.ClientModelValidatorProviders.Add(new DataAnnotationsClientModelValidatorProvider(
+                validationAttributeAdapterProvider,
                 dataAnnotationsLocalizationOptions,
-                stringLocalizerFactory,
-                validationAttributeAdapterProvider));
+                stringLocalizerFactory));
             options.ClientModelValidatorProviders.Add(new NumericClientModelValidatorProvider());
         }
     }

@@ -11,7 +11,7 @@ using Microsoft.Extensions.Localization;
 namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
 {
     /// <summary>
-    /// Provides validation based on the given <see cref="ValidationAttribute"/>.
+    /// Validates based on the given <see cref="ValidationAttribute"/>.
     /// </summary>
     public class DataAnnotationsModelValidator : IModelValidator
     {

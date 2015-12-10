@@ -227,9 +227,9 @@ namespace Microsoft.AspNet.Mvc.Rendering
             localizationOptionsAccesor.SetupGet(o => o.Value).Returns(new MvcDataAnnotationsLocalizationOptions());
 
             options.ClientModelValidatorProviders.Add(new DataAnnotationsClientModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 localizationOptionsAccesor.Object,
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider()));
+                stringLocalizerFactory: null));
             var optionsAccessor = new Mock<IOptions<MvcViewOptions>>();
             optionsAccessor
                 .SetupGet(o => o.Value)
