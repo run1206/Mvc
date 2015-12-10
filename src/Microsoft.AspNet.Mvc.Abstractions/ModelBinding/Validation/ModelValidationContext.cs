@@ -9,7 +9,7 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
     public class ModelValidationContext : ModelValidationContextBase
     {
         /// <summary>
-        /// Create a new instance of <see cref="DataAnnotationsClientModelValidatorProvider"/>.
+        /// Create a new instance of <see cref="ModelValidationContext"/>.
         /// </summary>
         /// <param name="actionContext">The <see cref="ActionContext"/> for validation.</param>
         /// <param name="modelMetadata">The <see cref="ModelMetadata"/> for validation.</param>
