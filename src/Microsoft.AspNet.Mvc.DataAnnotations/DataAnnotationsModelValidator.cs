@@ -21,7 +21,7 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
         /// <summary>
         ///  Create a new instance of <see cref="DataAnnotationsModelValidator"/>.
         /// </summary>
-        /// <param name="attribute">The <see cref="ValidationAttribute"/> which defines the behavior we're validating.</param>
+        /// <param name="attribute">The <see cref="ValidationAttribute"/> that defines what we're validating.</param>
         /// <param name="stringLocalizer">The <see cref="IStringLocalizer"/> used to create messages.</param>
         /// <param name="validationAttributeAdapterProvider">The <see cref="IValidationAttributeAdapterProvider"/>
         /// which <see cref="ValidationAttributeAdapter{TAttribute}"/>'s will be created from.</param>

@@ -19,17 +19,17 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
             var provider = TestModelMetadataProvider.CreateDefaultProvider();
             var metadata = provider.GetMetadataForProperty(typeof(string), "Length");
 
-            var attribute = new RangeAttribute(typeof(decimal), "0", "100");
+            var attribute = new RangeAttribute(0d, 100d);
             attribute.ErrorMessage = "The field Length must be between {1} and {2}.";
 
-            var expectedProperties = new object[] { "0", "100" };
+            var expectedProperties = new object[] { "Length", 0d, 100d };
             var expectedMessage = "The field Length must be between 0 and 100.";
 
             var stringLocalizer = new Mock<IStringLocalizer>();
             stringLocalizer.Setup(s => s[attribute.ErrorMessage, expectedProperties])
                 .Returns(new LocalizedString(attribute.ErrorMessage, expectedMessage));
 
-            var adapter = new RangeAttributeAdapter(attribute, stringLocalizer: null);
+            var adapter = new RangeAttributeAdapter(attribute, stringLocalizer: stringLocalizer.Object);
 
             var actionContext = new ActionContext();
             var context = new ClientModelValidationContext(actionContext, metadata, provider);
@@ -41,8 +41,8 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
             var rule = Assert.Single(rules);
             Assert.Equal("range", rule.ValidationType);
             Assert.Equal(2, rule.ValidationParameters.Count);
-            Assert.Equal(0m, rule.ValidationParameters["min"]);
-            Assert.Equal(100m, rule.ValidationParameters["max"]);
+            Assert.Equal(0d, rule.ValidationParameters["min"]);
+            Assert.Equal(100d, rule.ValidationParameters["max"]);
             Assert.Equal(expectedMessage, rule.ErrorMessage);
         }
     }

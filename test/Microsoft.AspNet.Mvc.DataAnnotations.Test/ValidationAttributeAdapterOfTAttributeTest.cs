@@ -31,8 +31,8 @@ namespace Microsoft.AspNet.Mvc.DataAnnotations.Test
                 actionContext,
                 modelMetadata,
                 metadataProvider,
-                null,
-                null);
+                container: null,
+                model: null);
 
             // Act
             adapter.GetErrorMessage(validationContext);

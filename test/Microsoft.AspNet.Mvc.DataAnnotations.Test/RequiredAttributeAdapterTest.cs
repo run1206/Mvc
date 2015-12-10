@@ -22,9 +22,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
             var attribute = new RequiredAttribute();
 
             var expectedProperties = new object[] { "Length" };
-
-            var expectedMessage = "This parameter is required.";
-            attribute.ErrorMessage = expectedMessage;
+            var message = "This paramter is required.";
+            var expectedMessage = "FR This parameter is required.";
+            attribute.ErrorMessage = message;
 
             var stringLocalizer = new Mock<IStringLocalizer>();
             stringLocalizer.Setup(s => s[attribute.ErrorMessage, expectedProperties])

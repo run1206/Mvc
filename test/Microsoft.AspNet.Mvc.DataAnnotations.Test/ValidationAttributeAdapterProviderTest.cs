@@ -81,7 +81,7 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
             string expectedRuleName)
         {
             // Arrange & Act
-            var adapter = _validationAttributeAdapterProvider.GetAttributeAdapter(attribute, null);
+            var adapter = _validationAttributeAdapterProvider.GetAttributeAdapter(attribute, stringLocalizer: null);
 
             // Assert
             var dataTypeAdapter = Assert.IsType<DataTypeAttributeAdapter>(adapter);
