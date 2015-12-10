@@ -68,7 +68,7 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
             // Assert
             var rule = Assert.Single(rules);
             // Mono issue - https://github.com/aspnet/External/issues/19
-            Assert.Equal(PlatformNormalizer.NormalizeContent(expectedMessage), rule.ErrorMessage);
+            Assert.Equal(expectedMessage, rule.ErrorMessage);
         }
 
         [Fact]
