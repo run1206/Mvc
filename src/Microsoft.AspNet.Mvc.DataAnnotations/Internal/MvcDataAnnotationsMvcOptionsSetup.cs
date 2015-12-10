@@ -32,9 +32,9 @@ namespace Microsoft.AspNet.Mvc.DataAnnotations.Internal
             options.ModelMetadataDetailsProviders.Add(new DataAnnotationsMetadataProvider());
 
             options.ModelValidatorProviders.Add(new DataAnnotationsModelValidatorProvider(
+                validationAttributeAdapterProvider,
                 dataAnnotationLocalizationOptions,
-                stringLocalizerFactory,
-                validationAttributeAdapterProvider));
+                stringLocalizerFactory));
         }
     }
 }

@@ -73,9 +73,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding
             };
 
             var validator = new DataAnnotationsModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
             var model = new MyModel();
 
             var values = new Dictionary<string, object>
@@ -117,9 +117,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding
             };
 
             var validator = new DataAnnotationsModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
             var model = new MyModel { MyProperty = "Old-Value" };
 
             var values = new Dictionary<string, object>
@@ -192,9 +192,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding
             };
 
             var validator = new DataAnnotationsModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
             var model = new MyModel
             {
                 MyProperty = "Old-Value",
@@ -281,9 +281,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding
             };
 
             var validator = new DataAnnotationsModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
             var model = new MyModel
             {
                 MyProperty = "Old-Value",
@@ -334,9 +334,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding
             };
 
             var validator = new DataAnnotationsModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
             var model = new MyModel
             {
                 MyProperty = "Old-Value",
@@ -540,9 +540,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding
             };
 
             var validator = new DataAnnotationsModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
             var model = new MyModel
             {
                 MyProperty = "Old-Value",
@@ -629,9 +629,9 @@ namespace Microsoft.AspNet.Mvc.ModelBinding
             };
 
             var validator = new DataAnnotationsModelValidatorProvider(
+                new ValidationAttributeAdapterProvider(),
                 new TestOptionsManager<MvcDataAnnotationsLocalizationOptions>(),
-                stringLocalizerFactory: null,
-                validationAttributeAdapterProvider: new ValidationAttributeAdapterProvider());
+                stringLocalizerFactory: null);
             var model = new MyModel { MyProperty = "Old-Value" };
 
             var values = new Dictionary<string, object>

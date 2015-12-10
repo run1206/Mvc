@@ -1,6 +1,7 @@
 // Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
+using System;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Mvc.DataAnnotations;
 #if DOTNET5_4
@@ -30,13 +31,22 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
         /// <remarks><paramref name="options"/> and <paramref name="stringLocalizerFactory"/>
         /// are nullable only for testing ease.</remarks>
         public DataAnnotationsModelValidatorProvider(
+            IValidationAttributeAdapterProvider validationAttributeAdapterProvider,
             IOptions<MvcDataAnnotationsLocalizationOptions> options,
-            IStringLocalizerFactory stringLocalizerFactory,
-            IValidationAttributeAdapterProvider validationAttributeAdapterProvider)
+            IStringLocalizerFactory stringLocalizerFactory)
         {
+            if (validationAttributeAdapterProvider == null)
+            {
+                throw new ArgumentNullException(nameof(validationAttributeAdapterProvider));
+            }
+            if (options == null)
+            {
+                throw new ArgumentNullException(nameof(options));
+            }
+
+            _validationAttributeAdapterProvider = validationAttributeAdapterProvider;
             _options = options;
             _stringLocalizerFactory = stringLocalizerFactory;
-            _validationAttributeAdapterProvider = validationAttributeAdapterProvider;
         }
 
         public void GetValidators(ModelValidatorProviderContext context)

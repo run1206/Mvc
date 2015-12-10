@@ -11,7 +11,7 @@ namespace Microsoft.AspNet.Mvc.ModelBinding.Validation
         /// <summary>
         /// Create a new instance of <see cref="ClientModelValidationContext"/>.
         /// </summary>
-        /// /// <param name="actionContext">The <see cref="ActionContext"/> for validation.</param>
+        /// <param name="actionContext">The <see cref="ActionContext"/> for validation.</param>
         /// <param name="metadata">The <see cref="ModelMetadata"/> for validation.</param>
         /// <param name="metadataProvider">The <see cref="IModelMetadataProvider"/> to be used in validation.</param>
         public ClientModelValidationContext(
