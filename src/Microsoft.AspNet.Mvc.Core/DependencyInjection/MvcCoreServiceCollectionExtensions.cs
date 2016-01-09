@@ -84,7 +84,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 ServiceDescriptor.Transient<IApplicationModelProvider, DefaultApplicationModelProvider>());
             services.TryAddEnumerable(
                 ServiceDescriptor.Transient<IActionDescriptorProvider, ControllerActionDescriptorProvider>());
-            services.TryAddSingleton<IActionDescriptorsCollectionProvider, DefaultActionDescriptorsCollectionProvider>();
+            services.TryAddSingleton<IActionDescriptorCollectionProvider, DefaultActionDescriptorCollectionProvider>();
 
             //
             // Action Selection
@@ -149,7 +149,6 @@ namespace Microsoft.Extensions.DependencyInjection
 
         private static void ConfigureDefaultServices(IServiceCollection services)
         {
-            services.AddOptions();
             services.AddRouting();
         }
     }
